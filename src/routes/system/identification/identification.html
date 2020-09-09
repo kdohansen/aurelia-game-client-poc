@@ -1,0 +1,15 @@
+<template>
+    <div class="readable">Apply for security clearance</div>
+    <div class="clickable" click.delegate="RequestAccess()">Submit request</div>   
+    
+    <div class="horizontal-border"></div>
+    <div class="readable">Passphrase</div>
+    <input class="clickable" spellcheck="false" autocomplete="off" type="text" name="Passphrase" placeholder="Enter name here">
+    <input class="clickable" spellcheck="false" autocomplete="off" type="text" name="Passphrase" placeholder="Enter passphrase here">
+    <div class="clickable" click.delegate="verifyPassphrase()">Confirm</div>
+    
+    <div class="horizontal-border"></div>
+    <div class="readable">SCL keycode</div>
+    <input class="clickable" spellcheck="false" autocomplete="off" type="text" name="Keycode" placeholder="Enter SCL keycode here">
+    <div class="clickable"  click.delegate="verifySCLKeyCode()">Confirm</div>
+</template>

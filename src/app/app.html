@@ -1,0 +1,35 @@
+<template>
+    <require from="styles/styles.css"></require>
+    <require from="app/app.css"></require>
+    <require from="components/console/console-message"></require>
+    <div id="app-shell" class="app-layout ${displayService.terminalEffects}">
+        <div class="app-navigation">
+            <div class="img-container">
+                <img class="opaque" src="${imageUrl}" alt="" onerror="this.src='/static.gif'">  
+            </div>
+            <div class="horizontal-border"></div>   
+            <div repeat.for="route of currentRouteSection.values" click.delegate="showRoute(route.name)" class="clickable ${route.name == $parent.currentRouteSection.currentRoute ? 'selected' : ''}">
+                ${route.title}
+            </div>
+        </div>
+        <div class="app-left-border vertical-border"></div>
+        <div class="app-content">
+            <router-view></router-view>
+        </div>
+        <div class="app-right-border vertical-border"></div>        
+        <div class="app-io">  
+            <div>          
+                <div show.bind="!!app.state.user" class="clickable ${currentRouteSection.key == 'setUserRoutes' ? 'selected' : ''}" click.delegate="showSection('userRoutes')">User: ${app.state.user.name}</div>  
+                <div show.bind="!!app.state.campaign" class="clickable ${currentRouteSection.key == 'setCampaignRoutes' ? 'selected' : ''}" click.delegate="showSection('campaignRoutes')">Campaign: ${app.state.campaign.name}</div>
+                <div show.bind="!!app.state.character" class="clickable ${currentRouteSection.key == 'setCharacterRoutes' ? 'selected' : ''}" click.delegate="showSection('characterRoutes')">Character: ${app.state.character.name}</div>
+                <div show.bind="!!app.state.character" class="clickable ${currentRouteSection.key == 'setSimulationRoutes' ? 'selected' : ''}" click.delegate="showSection('simulationRoutes')">Simulation</div>
+                <div show.bind="!!app.state.user" class="horizontal-border"></div>
+            </div> 
+            <div class="app-console">
+                <div class="opaque">
+                    <console-message model.bind="entry" repeat.for="entry of consoleService.entries"></console-message>
+                </div>
+            </div>        
+        </div>
+    </div>
+</template>

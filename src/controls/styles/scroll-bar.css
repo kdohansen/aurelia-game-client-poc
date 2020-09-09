@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+    appearance: none;
+    margin: 0.2rem;
+    width: 0.5rem;
+    height: 0.5rem;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color-dim); 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-opaque); 
+}
+
+.content-diffusion ::-webkit-scrollbar-thumb {
+    box-shadow: 0 0 0.15rem var(--color-dim);
+}
+.content-diffusion ::-webkit-scrollbar-thumb:hover {
+    box-shadow: 0 0 0.15rem var(--color-opaque);
+}

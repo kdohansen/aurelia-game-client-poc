@@ -1,0 +1,22 @@
+
+input,
+textarea,
+[contenteditable] {
+    width: calc(100% - 0.4rem);
+    text-shadow: inherit;
+    color: inherit;
+    cursor: inherit;
+    background-color: inherit;
+    caret-color:var(--color-main);
+    user-select: auto;
+    outline: none;  
+    border:none;
+}
+::placeholder {
+    opacity: var(--opaque);
+    color: inherit;
+    text-overflow: ellipsis !important;
+}
+::selection {
+    background: var(--color-dim);
+}

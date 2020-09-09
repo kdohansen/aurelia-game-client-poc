@@ -1,0 +1,8 @@
+<template>
+    <require from="./vertical-divider.css"></require>
+    <div class="flex-horizontal">
+        <slot name="left"></slot>
+        <div if.bind="!hideBorder" class="vertical-border"></div>
+        <slot name="right"></slot name="left">
+    </div>
+</template>

@@ -1,0 +1,25 @@
+<template>    
+    <require from="controls/range-slider/range-slider"></require>
+    <require from="controls/vertical-divider/vertical-divider"></require>
+    <require from="resources/value-converters/rem-to-percentage"></require>
+    <vertical-divider>
+        <div slot="left">
+            <div class="readable">Select sound</div>
+            <div repeat.for="soundKey of sound.soundKeys" class="clickable ${soundKey === sound.selectedKey ? 'selected' : ''}" click.delegate="sound.setSoundKey(soundKey)">${soundKey.name}</div>
+        </div>
+        <div slot="right">
+            <div class="readable">Toggle audible interactions</div>
+            <div class="clickable ${sound.useClick ? 'selected' : ''}" click.delegate="sound.useClick = !sound.useClick">Click</div>
+            <div class="clickable ${sound.useInput ? 'selected' : ''}" click.delegate="sound.useInput = !sound.useInput">Input</div>
+            <div class="clickable ${sound.useHover ? 'selected' : ''}" click.delegate="sound.useHover = !sound.useHover">Hover</div>
+            <div class="clickable ${sound.useOutput ? 'selected' : ''}" click.delegate="sound.useOutput = !sound.useOutput">Console</div>
+        </div>
+    </vertical-divider>
+    <div class="horizontal-border"></div>
+    <range-slider name="Sound Volume" min="0.0" max="1.0" step="0.01" input-trigger="true" value-source.bind="sound.volume" change-handler.call="sound.setVolume()">
+        ${sound.volume | remToPercentage}
+    </range-slider>
+    <range-slider name="Repeat timeout" min="1" max="100" step="1" input-trigger="true" value-source.bind="sound.repeatTimeout">
+        ${sound.repeatTimeout} Milliseconds
+    </range-slider>
+</template>

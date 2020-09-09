@@ -1,0 +1,32 @@
+<template>
+    <require from="controls/vertical-divider/vertical-divider"></require>
+
+    <vertical-divider>
+        <div slot="left">
+            <div class="readable">User name: ${app.state.user.name}</div>
+            <input class="clickable" spellcheck="false" autocomplete="off" type="text" value.bind="name" placeholder="Enter new name here">
+            <div class="clickable" click.delegate="confirmName()">Confirm name</div>
+        </div>
+        <div slot="right">
+            <div class="readable">Profile picture</div>
+            <div class="clickable" click.delegate="changeUserImage()">Change</div>
+        </div>
+    </vertical-divider>    
+    <div class="horizontal-border"></div>    
+    <div class="readable">Passphrase: ${app.state.user.passPhrase}</div>
+    <div class="readable">Change passphrase</div>
+    <input class="clickable" spellcheck="false" autocomplete="off" type="text" value.bind="assPhrase" placeholder="Enter new passphrase here">
+    <input class="clickable" spellcheck="false" autocomplete="off" type="text" value.bind="passPhraseValidation" placeholder="Confirm new passphrase here">
+    <div class="clickable" click.delegate="confirmPassphrase()">Confirm</div>
+    
+    <div class="horizontal-border"></div>
+    <div class="readable">SCL keycode</div>
+    <input class="readable" spellcheck="false" autocomplete="off" type="text" readonly value.to-view="app.state.user.keyCode" placeholder="SCL keycode will be shown here">
+    <div class="clickable" click.delegate="generateNewKeycode()">Generate new SCL keycode</div>
+
+    <div class="horizontal-border"></div>
+    <div class="readable">Security clearance level: ${scl}</div>
+    <div class="readable">Access granted at: ${timeOfLogin}</div class="readable">
+    <div class="readable">Access expires in: ${tokenExpiration}</div class="readable">
+    <div class="clickable" click.delegate="endAccess()">Terminate current access</div>
+</template>

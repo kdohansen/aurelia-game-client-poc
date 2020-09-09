@@ -1,0 +1,10 @@
+<template>
+    <require from="./range-slider.css"></require>
+    <div class="slider-container">
+        <div class="slider-header">
+            <div class="slider-title">${name}</div>
+            <slot>${valueSource}</slot>
+        </div>
+        <input class="slider" type="range" step.bind="step" min.bind="min" max.bind="max" value.bind="valueSource" input.delegate="changeInput()" change.delegate="changeValue()">
+    </div>
+</template>

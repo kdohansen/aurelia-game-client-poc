@@ -1,0 +1,14 @@
+
+img {
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    z-index: 0;
+}
+.img-container{
+    z-index: 1;
+    margin: 0.2rem;
+}
+.content-diffusion .img-container {
+    box-shadow: inset 0 0 0.2rem 0 var(--color-main), 0 0 0.2rem 0 var(--color-opaque);
+}

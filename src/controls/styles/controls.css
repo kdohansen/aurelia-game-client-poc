@@ -1,0 +1,47 @@
+@import "image.css";
+@import "input.css";
+@import "layout.css";
+@import "scroll-bar.css";
+
+
+.readable {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    min-height: 2.5rem;
+    line-height: 1rem;
+    word-wrap: break-word;
+}
+.clickable {
+    margin: 0.2rem;
+    display: block;
+    min-height: 2.1rem;
+    line-height: 1rem;
+    padding: 0.55rem;
+    word-wrap: break-word;
+    border-left: 0.1rem solid var(--color-silhuet);
+}
+
+.selected,
+.clickable:focus,
+.hover .clickable:hover
+{   
+     background-color: var(--color-silhuet);
+}
+
+.content-diffusion .selected,
+.content-diffusion.hover .clickable:focus,
+.content-diffusion.hover .clickable:hover
+{
+    box-shadow:  0 0 0.15rem var(--color-silhuet);
+}
+
+.hover .clickable:focus:hover,
+.hover .selected.clickable:hover {    
+    background-color: var(--color-dim); 
+}
+.content-diffusion.hover .clickable:focus:hover,
+.content-diffusion.hover .selected.clickable:hover {
+    box-shadow: 0 0 0.15rem var(--color-dim);
+}

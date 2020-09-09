@@ -1,0 +1,14 @@
+.flex-horizontal {
+    display: flex;
+    
+    
+}
+.flex-horizontal
+.vertical-border{
+    flex-grow: 0;
+}
+.flex-horizontal
+*{
+    flex-grow: 1;
+    flex-basis: 0;
+}
