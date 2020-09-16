@@ -1,10 +1,9 @@
 @import "image.css";
-@import "input.css";
 @import "layout.css";
 @import "scroll-bar.css";
 
 
-.readable {
+p {
     padding-left: 0.2rem;
     padding-right: 0.2rem;
     padding-top: 0.75rem;
@@ -13,7 +12,8 @@
     line-height: 1rem;
     word-wrap: break-word;
 }
-.clickable {
+button, input {
+    text-align: left;
     margin: 0.2rem;
     display: block;
     min-height: 2.1rem;
@@ -23,25 +23,55 @@
     border-left: 0.1rem solid var(--color-silhuet);
 }
 
-.selected,
-.clickable:focus,
-.hover .clickable:hover
+input,
+button,
+textarea,
+[contenteditable] {
+    width: calc(100% - 0.4rem);
+    text-shadow: inherit;
+    color: inherit;
+    cursor: inherit;
+    background-color: inherit;
+    caret-color:var(--color-main);
+    user-select: auto;
+    outline: none;  
+    border:none;
+}
+::placeholder {
+    opacity: var(--opaque);
+    color: inherit;
+    text-overflow: ellipsis !important;
+}
+::selection {
+    background: var(--color-dim);
+}
+
+.touch button,
+.touch input {
+    cursor: pointer;
+}
+
+button.selected,
+.hover button:hover,
+input.selected,
+input:focus,
+.hover input:hover
 {   
      background-color: var(--color-silhuet);
 }
 
 .content-diffusion .selected,
-.content-diffusion.hover .clickable:focus,
-.content-diffusion.hover .clickable:hover
+.content-diffusion.hover button:hover
 {
     box-shadow:  0 0 0.15rem var(--color-silhuet);
 }
 
-.hover .clickable:focus:hover,
-.hover .selected.clickable:hover {    
+/*Strong highligt for Focus || Selected && hover*/
+.hover button:focus:hover,
+.hover button.selected:hover {    
     background-color: var(--color-dim); 
 }
-.content-diffusion.hover .clickable:focus:hover,
-.content-diffusion.hover .selected.clickable:hover {
+.content-diffusion.hover button:focus:hover,
+.content-diffusion.hover button.selected:hover {
     box-shadow: 0 0 0.15rem var(--color-dim);
 }

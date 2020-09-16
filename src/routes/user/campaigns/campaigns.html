@@ -1,19 +1,19 @@
 <template>
-    <div class="readable">New campaign</div>
-    <input class="clickable" spellcheck="false" autocomplete="off" type="text" name="campaignName" placeholder="Enter campaign name here">
-    <div class="clickable" click.delegate="app.selectCampaign()">Confirm & create</div>
+    <p>New campaign</p>
+    <input spellcheck="false" autocomplete="off" type="text" placeholder="Enter campaign name here">
+    <button click.delegate="app.selectCampaign()">Confirm & create</button>
     
     <div class="horizontal-border"></div>
-    <div class="readable">Join campaign</div>
-    <input class="clickable" spellcheck="false" autocomplete="off" type="text" name="campaignName" placeholder="Enter campaign invitation code here">
-    <div class="clickable" >Confirm & join</div>
+    <p>Join campaign</p>
+    <input spellcheck="false" autocomplete="off" type="text" placeholder="Enter campaign invitation code here">
+    <button>Confirm & join</button>
 
     <div class="horizontal-border"></div>
-    <div class="readable">Campaigns:</div>    
-    <div class="clickable">Mort intro</div>    
-    <div class="clickable">Gutter Justice Squad</div>
+    <p>Campaigns:</p>    
+    <button>Mort intro</button>    
+    <button>Gutter Justice Squad</button>
     
     <div class="horizontal-border"></div>
-    <div class="readable">Campaign details</div>   
-    <div class="clickable">Resume campaign</div> 
+    <p>Campaign details</p>   
+    <button>Resume campaign</button> 
 </template>

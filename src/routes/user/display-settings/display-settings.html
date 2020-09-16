@@ -5,17 +5,17 @@
 
     <div>
         <div>
-            <div class="readable">Interaction settings</div>
-            <div class="clickable ${!display.useTouch ? 'selected' : ''}" click.delegate="display.toggleTouch()">Keyboard & mouse</div>
-            <div class="clickable ${display.useTouch ? 'selected' : ''}" click.delegate="display.toggleTouch()">Touch</div>
-            <div class="readable">Color settings</div>
-            <div class="clickable ${display.colorSetting == 'setWhiteOnBlack' ? 'selected' : ''}" click.delegate="display.setWhiteOnBlack()">White on black</div>
-            <div class="clickable ${display.colorSetting == 'setWhiteOnBlue' ? 'selected' : ''}" click.delegate="display.setWhiteOnBlue()">White on blue</div>
-            <div class="clickable ${display.colorSetting == 'setNeon' ? 'selected' : ''}" click.delegate="display.setNeon()">Neon</div>
-            <div class="clickable ${display.colorSetting == 'setBlackOnWhite' ? 'selected' : ''}" click.delegate="display.setBlackOnWhite()">Black on white</div>
-            <div class="clickable ${display.colorSetting == 'setBlueInkOnWhite' ? 'selected' : ''}" click.delegate="display.setBlueInkOnWhite()">Blue ink on white</div>
-            <div class="clickable ${display.colorSetting == 'setBrownInkOnWhite' ? 'selected' : ''}" click.delegate="display.setBrownInkOnWhite()">Brown ink on white</div>
-            <div class="clickable ${display.colorSetting == 'setSpectrumOnBlack' ? 'selected' : ''}" click.delegate="display.setSpectrumOnBlack()">Custom color on black</div>
+            <p>Interaction settings</p>
+            <button class="${!display.useTouch ? 'selected' : ''}" click.delegate="display.toggleTouch()">Keyboard & mouse</button>
+            <button class="${display.useTouch ? 'selected' : ''}" click.delegate="display.toggleTouch()">Touch</button>
+            <p>Color settings</p>
+            <button class="${display.colorSetting == 'setWhiteOnBlack' ? 'selected' : ''}" click.delegate="display.setWhiteOnBlack()">White on black</button>
+            <button class="${display.colorSetting == 'setWhiteOnBlue' ? 'selected' : ''}" click.delegate="display.setWhiteOnBlue()">White on blue</button>
+            <button class="${display.colorSetting == 'setNeon' ? 'selected' : ''}" click.delegate="display.setNeon()">Neon</button>
+            <button class="${display.colorSetting == 'setBlackOnWhite' ? 'selected' : ''}" click.delegate="display.setBlackOnWhite()">Black on white</button>
+            <button class="${display.colorSetting == 'setBlueInkOnWhite' ? 'selected' : ''}" click.delegate="display.setBlueInkOnWhite()">Blue ink on white</button>
+            <button class="${display.colorSetting == 'setBrownInkOnWhite' ? 'selected' : ''}" click.delegate="display.setBrownInkOnWhite()">Brown ink on white</button>
+            <button class="${display.colorSetting == 'setSpectrumOnBlack' ? 'selected' : ''}" click.delegate="display.setSpectrumOnBlack()">Custom color on black</button>
             <range-slider if.bind="display.colorSetting == 'setSpectrumOnBlack'" name="Color spectrum" min="460" max="640" step="1" value-source.bind="display.wavelength" input-trigger="true" change-handler.call="display.setSpectrumOnBlack()">
                 ${display.wavelength} nm wevelength
             </range-slider>
@@ -25,28 +25,28 @@
             <div class="horizontal-border"></div>
             <vertical-divider>
                 <div slot="left">
-                    <div class="readable">Monitor effects</div>
-                    <div class="clickable ${display.useMonitorPixelation ? 'selected' : ''}" click.delegate="display.toggleMonitorPixelation()">Monitor pixelation</div>
-                    <div class="clickable ${display.useMonitorDiffusion ? 'selected' : ''}" click.delegate="display.toggleMonitorDiffusion()">Monitor diffusion</div>
-                    <div class="clickable ${display.useMonitorFlicker ? 'selected' : ''}" click.delegate="display.toggleMonitorFlicker()">Monitor flicker</div>
+                    <p>Monitor effects</p>
+                    <button class=" ${display.useMonitorPixelation ? 'selected' : ''}" click.delegate="display.toggleMonitorPixelation()">Monitor pixelation</button>
+                    <button class=" ${display.useMonitorDiffusion ? 'selected' : ''}" click.delegate="display.toggleMonitorDiffusion()">Monitor diffusion</button>
+                    <button class=" ${display.useMonitorFlicker ? 'selected' : ''}" click.delegate="display.toggleMonitorFlicker()">Monitor flicker</button>
                     <range-slider name="Monitor scaling" min="0.5" max="2.0" step="0.1" value-source.bind="display.monitorScaling" change-handler.call="display.setMonitorScaling()">
                         ${display.monitorScaling | remToPercentage}
                     </range-slider>
                 </div>
                 <div slot="right">
-                    <div class="readable">Content effects</div>
-                    <div class="clickable ${display.useTextBold ? 'selected' : ''}" click.delegate="display.toggleTextBold()">Bold text</div>
-                    <div class="clickable ${display.useTextDiffusion ? 'selected' : ''}" click.delegate="display.toggleTextDiffusion()">Text diffusion</div>
-                    <div class="clickable ${display.useTextFlicker ? 'selected' : ''}" click.delegate="display.toggleTextFlicker()">Text flicker</div>
-                    <div class="clickable ${display.useContentDiffusion ? 'selected' : ''}" click.delegate="display.toggleContentDiffusion()">Content diffusion</div>
+                    <p>Content effects</p>
+                    <button class="${display.useTextBold ? 'selected' : ''}" click.delegate="display.toggleTextBold()">Bold text</button>
+                    <button class="${display.useTextDiffusion ? 'selected' : ''}" click.delegate="display.toggleTextDiffusion()">Text diffusion</button>
+                    <button class="${display.useTextFlicker ? 'selected' : ''}" click.delegate="display.toggleTextFlicker()">Text flicker</button>
+                    <button class="${display.useContentDiffusion ? 'selected' : ''}" click.delegate="display.toggleContentDiffusion()">Content diffusion</button>
                 </div slot="left">
             </vertical-divider>
             <div class="horizontal-border"></div>
-            <div class="readable">Text style</div>
-            <div class="clickable ${display.textStyle == 'default' ? 'selected' : ''}" click.delegate="display.setTextStyle('default')">Default</div>
-            <div class="clickable ${display.textStyle == 'alt1' ? 'selected' : ''}" click.delegate="display.setTextStyle('alt1')">Alt1</div>
-            <div class="clickable ${display.textStyle == 'alt2' ? 'selected' : ''}" click.delegate="display.setTextStyle('alt2')">Alt2</div>
-            <div class="clickable ${display.textStyle == 'alt3' ? 'selected' : ''}" click.delegate="display.setTextStyle('alt3')">Alt3</div>
+            <p>Text style</p>
+            <button class="${display.textStyle == 'default' ? 'selected' : ''}" click.delegate="display.setTextStyle('default')">Default</button>
+            <button class="${display.textStyle == 'alt1' ? 'selected' : ''}" click.delegate="display.setTextStyle('alt1')">Alt1</button>
+            <button class="${display.textStyle == 'alt2' ? 'selected' : ''}" click.delegate="display.setTextStyle('alt2')">Alt2</button>
+            <button class="${display.textStyle == 'alt3' ? 'selected' : ''}" click.delegate="display.setTextStyle('alt3')">Alt3</button>
         </div>
     </div>
 </template>

@@ -8,9 +8,9 @@
                 <img class="opaque" src="${imageUrl}" alt="" onerror="this.src='/static.gif'">  
             </div>
             <div class="horizontal-border"></div>   
-            <div repeat.for="route of currentRouteSection.values" click.delegate="showRoute(route.name)" class="clickable ${route.name == $parent.currentRouteSection.currentRoute ? 'selected' : ''}">
+            <button repeat.for="route of currentRouteSection.values" click.delegate="showRoute(route.name)" class="${route.name == $parent.currentRouteSection.currentRoute ? 'selected' : ''}">
                 ${route.title}
-            </div>
+            </button>
         </div>
         <div class="app-left-border vertical-border"></div>
         <div class="app-content">
@@ -19,10 +19,10 @@
         <div class="app-right-border vertical-border"></div>        
         <div class="app-io">  
             <div>          
-                <div show.bind="!!app.state.user" class="clickable ${currentRouteSection.key == 'setUserRoutes' ? 'selected' : ''}" click.delegate="showSection('userRoutes')">User: ${app.state.user.name}</div>  
-                <div show.bind="!!app.state.campaign" class="clickable ${currentRouteSection.key == 'setCampaignRoutes' ? 'selected' : ''}" click.delegate="showSection('campaignRoutes')">Campaign: ${app.state.campaign.name}</div>
-                <div show.bind="!!app.state.character" class="clickable ${currentRouteSection.key == 'setCharacterRoutes' ? 'selected' : ''}" click.delegate="showSection('characterRoutes')">Character: ${app.state.character.name}</div>
-                <div show.bind="!!app.state.character" class="clickable ${currentRouteSection.key == 'setSimulationRoutes' ? 'selected' : ''}" click.delegate="showSection('simulationRoutes')">Simulation</div>
+                <button show.bind="!!app.state.user" class="${currentRouteSection.key == 'setUserRoutes' ? 'selected' : ''}" click.delegate="showSection('userRoutes')">User: ${app.state.user.name}</button>  
+                <button show.bind="!!app.state.campaign" class="${currentRouteSection.key == 'setCampaignRoutes' ? 'selected' : ''}" click.delegate="showSection('campaignRoutes')">Campaign: ${app.state.campaign.name}</button>
+                <button show.bind="!!app.state.character" class="${currentRouteSection.key == 'setCharacterRoutes' ? 'selected' : ''}" click.delegate="showSection('characterRoutes')">Character: ${app.state.character.name}</button>
+                <button show.bind="!!app.state.character" class="${currentRouteSection.key == 'setSimulationRoutes' ? 'selected' : ''}" click.delegate="showSection('simulationRoutes')">Simulation</button>
                 <div show.bind="!!app.state.user" class="horizontal-border"></div>
             </div> 
             <div class="app-console">

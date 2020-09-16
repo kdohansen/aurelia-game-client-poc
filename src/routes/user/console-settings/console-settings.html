@@ -1,12 +1,12 @@
 <template>
     <require from="controls/range-slider/range-slider"></require>
-    <div class="readable">Console settings</div>
-    <div class="clickable ${console.lockWhenWriting ? 'selected' : ''}" click.delegate="console.toggleMessageLock()">Scroll-lock on new messages</div>
-    <div class="clickable ${console.useTypeWriter ? 'selected' : ''}" click.delegate="console.toggleTypeWriter()">Text typing effect</div>
+    <p>Console settings</p>
+    <button class="${console.lockWhenWriting ? 'selected' : ''}" click.delegate="console.toggleMessageLock()">Scroll-lock on new messages</button>
+    <button class="${console.useTypeWriter ? 'selected' : ''}" click.delegate="console.toggleTypeWriter()">Text typing effect</button>
     <range-slider if.bind="console.useTypeWriter" name="Typing speed" min="1" max="100" step="1" value-source.bind="console.typingSpeed" input-trigger="true">
         ${console.typingSpeed} ms per letter
     </range-slider>
     <div class="horizontal-border"></div>
-    <div class="readable">Message settings</div>
-    <div class="clickable ${console.writeNavigationMessages ? 'selected' : ''}" click.delegate="console.toggleNavigationMessages()">Write navigation messages</div>
+    <p>Message settings</p>
+    <button class="${console.writeNavigationMessages ? 'selected' : ''}" click.delegate="console.toggleNavigationMessages()">Write navigation messages</button>
 </template>

@@ -9,10 +9,13 @@ export class SoundService{
     public useHover: boolean = false;
     public useInput: boolean = true;
     public useOutput: boolean = false;
+    public clickables: string[] = ["INPUT", "BUTTON"]
     constructor(){
         window.oninput = (event) => { if(this.useInput) this.play();};
-        window.onmouseover = (event) => { if(this.useHover && (event.target.classList.contains("clickable") || event.target.classList.contains("slider"))) this.play();};
-        window.onclick = (event) => { if(this.useClick && event.target.classList.contains("clickable")) this.play();};
+        window.onmouseover = (event) => { debugger
+            if(this.useHover && this.clickables.some(x => x === event.target.nodeName)) this.play();};
+        window.onclick = (event) => { debugger
+            if(this.useClick && this.clickables.some(x => x === event.target.nodeName)) this.play();};
     }
     public soundKeys: { name: string, key: string }[] = [
         { name: "Beep", key: "/beep.mp3"},

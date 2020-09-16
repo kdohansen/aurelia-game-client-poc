@@ -4,15 +4,15 @@
     <require from="resources/value-converters/rem-to-percentage"></require>
     <vertical-divider>
         <div slot="left">
-            <div class="readable">Select sound</div>
-            <div repeat.for="soundKey of sound.soundKeys" class="clickable ${soundKey === sound.selectedKey ? 'selected' : ''}" click.delegate="sound.setSoundKey(soundKey)">${soundKey.name}</div>
+            <p>Select sound</p>
+            <button repeat.for="soundKey of sound.soundKeys" class="${soundKey === sound.selectedKey ? 'selected' : ''}" click.delegate="sound.setSoundKey(soundKey)">${soundKey.name}</button>
         </div>
         <div slot="right">
-            <div class="readable">Toggle audible interactions</div>
-            <div class="clickable ${sound.useClick ? 'selected' : ''}" click.delegate="sound.useClick = !sound.useClick">Click</div>
-            <div class="clickable ${sound.useInput ? 'selected' : ''}" click.delegate="sound.useInput = !sound.useInput">Input</div>
-            <div class="clickable ${sound.useHover ? 'selected' : ''}" click.delegate="sound.useHover = !sound.useHover">Hover</div>
-            <div class="clickable ${sound.useOutput ? 'selected' : ''}" click.delegate="sound.useOutput = !sound.useOutput">Console</div>
+            <p>Toggle audible interactions</p>
+            <button class="${sound.useClick ? 'selected' : ''}" click.delegate="sound.useClick = !sound.useClick">Click</button>
+            <button class="${sound.useInput ? 'selected' : ''}" click.delegate="sound.useInput = !sound.useInput">Input</button>
+            <button class="${sound.useHover ? 'selected' : ''}" click.delegate="sound.useHover = !sound.useHover">Hover</button>
+            <button class="${sound.useOutput ? 'selected' : ''}" click.delegate="sound.useOutput = !sound.useOutput">Console</button>
         </div>
     </vertical-divider>
     <div class="horizontal-border"></div>

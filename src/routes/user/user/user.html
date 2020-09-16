@@ -3,30 +3,30 @@
 
     <vertical-divider>
         <div slot="left">
-            <div class="readable">User name: ${app.state.user.name}</div>
-            <input class="clickable" spellcheck="false" autocomplete="off" type="text" value.bind="name" placeholder="Enter new name here">
-            <div class="clickable" click.delegate="confirmName()">Confirm name</div>
+            <p>User name: ${app.state.user.name}</p>
+            <input spellcheck="false" autocomplete="off" type="text" value.bind="name" placeholder="Enter new name here">
+            <button click.delegate="confirmName()">Confirm name</button>
         </div>
         <div slot="right">
-            <div class="readable">Profile picture</div>
-            <div class="clickable" click.delegate="changeUserImage()">Change</div>
+            <p>Profile picture</p>
+            <button click.delegate="changeUserImage()">Change</button>
         </div>
     </vertical-divider>    
     <div class="horizontal-border"></div>    
-    <div class="readable">Passphrase: ${app.state.user.passPhrase}</div>
-    <div class="readable">Change passphrase</div>
-    <input class="clickable" spellcheck="false" autocomplete="off" type="text" value.bind="assPhrase" placeholder="Enter new passphrase here">
-    <input class="clickable" spellcheck="false" autocomplete="off" type="text" value.bind="passPhraseValidation" placeholder="Confirm new passphrase here">
-    <div class="clickable" click.delegate="confirmPassphrase()">Confirm</div>
+    <p>Passphrase: ${app.state.user.passPhrase}</p>
+    <p>Change passphrase</p>
+    <input spellcheck="false" autocomplete="off" type="text" value.bind="assPhrase" placeholder="Enter new passphrase here">
+    <input spellcheck="false" autocomplete="off" type="text" value.bind="passPhraseValidation" placeholder="Confirm new passphrase here">
+    <button click.delegate="confirmPassphrase()">Confirm</button>
     
     <div class="horizontal-border"></div>
-    <div class="readable">SCL keycode</div>
-    <input class="readable" spellcheck="false" autocomplete="off" type="text" readonly value.to-view="app.state.user.keyCode" placeholder="SCL keycode will be shown here">
-    <div class="clickable" click.delegate="generateNewKeycode()">Generate new SCL keycode</div>
+    <p>SCL keycode</p>
+    <input spellcheck="false" autocomplete="off" type="text" readonly value.to-view="app.state.user.keyCode" placeholder="SCL keycode will be shown here">
+    <button click.delegate="generateNewKeycode()">Generate new SCL keycode</button>
 
     <div class="horizontal-border"></div>
-    <div class="readable">Security clearance level: ${scl}</div>
-    <div class="readable">Access granted at: ${timeOfLogin}</div class="readable">
-    <div class="readable">Access expires in: ${tokenExpiration}</div class="readable">
-    <div class="clickable" click.delegate="endAccess()">Terminate current access</div>
+    <p>Security clearance level: ${scl}</p>
+    <p>Access granted at: ${timeOfLogin}</p>
+    <p>Access expires in: ${tokenExpiration}</p>
+    <button click.delegate="endAccess()">Terminate current access</button>
 </template>

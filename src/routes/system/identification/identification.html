@@ -1,15 +1,15 @@
 <template>
-    <div class="readable">Apply for security clearance</div>
-    <div class="clickable" click.delegate="RequestAccess()">Submit request</div>   
+    <p>Apply for security clearance</p>
+    <button click.delegate="RequestAccess()">Submit request</button>   
     
     <div class="horizontal-border"></div>
-    <div class="readable">Passphrase</div>
-    <input class="clickable" spellcheck="false" autocomplete="off" type="text" name="Passphrase" placeholder="Enter name here">
-    <input class="clickable" spellcheck="false" autocomplete="off" type="text" name="Passphrase" placeholder="Enter passphrase here">
-    <div class="clickable" click.delegate="verifyPassphrase()">Confirm</div>
+    <p>Passphrase</p>
+    <input spellcheck="false" autocomplete="off" type="text" name="Passphrase" placeholder="Enter name here">
+    <input spellcheck="false" autocomplete="off" type="text" name="Passphrase" placeholder="Enter passphrase here">
+    <button click.delegate="verifyPassphrase()">Confirm</button>
     
     <div class="horizontal-border"></div>
-    <div class="readable">SCL keycode</div>
-    <input class="clickable" spellcheck="false" autocomplete="off" type="text" name="Keycode" placeholder="Enter SCL keycode here">
-    <div class="clickable"  click.delegate="verifySCLKeyCode()">Confirm</div>
+    <p>SCL keycode</p>
+    <input spellcheck="false" autocomplete="off" type="text" name="Keycode" placeholder="Enter SCL keycode here">
+    <button click.delegate="verifySCLKeyCode()">Confirm</button>
 </template>

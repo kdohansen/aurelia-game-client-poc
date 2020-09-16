@@ -4,10 +4,12 @@ import { autoinject } from 'aurelia-framework';
 // ToDo move styling values to css vars
 @autoinject
 export class DisplayService {
-    terminalEffects: string = "";
 
-    useTouch: boolean = true;
-    readonly useHover: string = " hover";
+    useTouch: boolean = false;
+    readonly hoverKey: string = " hover";
+    readonly touchKey: string = " touch";
+
+    terminalEffects: string = this.hoverKey;
 
     colorSetting: string;
     monitorScaling: string;
@@ -53,15 +55,14 @@ export class DisplayService {
         this.setTextStyle("default");
         this.toggleTextFlicker();
         this.toggleContentDiffusion();
-        this.toggleTouch();
     }
 
     toggleTouch() {
         this.useTouch = !this.useTouch;
         if (this.useTouch) {
-            this.terminalEffects = this.terminalEffects.replace(this.useHover, "");
+            this.terminalEffects = this.terminalEffects.replace(this.hoverKey, this.touchKey);
         } else {
-            this.terminalEffects += this.useHover;
+            this.terminalEffects = this.terminalEffects.replace(this.touchKey, this.hoverKey);
         }
     }
     toggleMonitorPixelation() {
